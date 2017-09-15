@@ -13,7 +13,7 @@ public class PmsHooker {
 
     private static DefaultInvocationHandler sInvocationHandler;
 
-    public static void hook() {
+    static {
         try {
             // get ActivityThread.sPackageManager
             Class<?> activityThreadClass = Class.forName("android.app.ActivityThread");

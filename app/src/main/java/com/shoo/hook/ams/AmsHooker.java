@@ -26,7 +26,7 @@ public class AmsHooker {
     private static Method getLaunchedFromPackageMethod;
     private static Method getActivityTokenMethod;
 
-    public static void hook() {
+    static {
         try {
             // Singleton<IActivityManager> ActivityManagerNative.gDefault
             Class clazz = Class.forName("android.app.ActivityManagerNative");
