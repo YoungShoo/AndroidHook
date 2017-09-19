@@ -16,7 +16,7 @@ public class TAmsHooker {
         TAmsHooker: launchedFrom = com.meizu.flyme.launcher
          */
 
-        String launchedFrom = AmsHooker.getLaunchedFrom(activity);
+        String launchedFrom = LaunchedFromHooker.getLaunchedFrom(activity);
         Log.d(TAG, "launchedFrom = " + launchedFrom);
     }
 }

@@ -1,5 +1,6 @@
 package com.shoo.hook.pms;
 
+import com.shoo.hook.AbsHooker;
 import com.shoo.hook.DefaultInvocationHandler;
 
 import java.lang.reflect.Field;
@@ -9,9 +10,7 @@ import java.lang.reflect.Proxy;
  * Created by Shoo on 17-9-8.
  */
 
-public class PmsHooker {
-
-    private static DefaultInvocationHandler sInvocationHandler;
+public class PmsHooker extends AbsHooker {
 
     static {
         try {
@@ -36,8 +35,6 @@ public class PmsHooker {
     }
 
     public static void hookPackageInfo(String sign, int hashCode) {
-        if (sInvocationHandler != null) {
-            sInvocationHandler.addHandler(new PackageInfoInvocationHandler(sign, hashCode));
-        }
+        addHandler(new PackageInfoInvocationHandler(sign, hashCode));
     }
 }

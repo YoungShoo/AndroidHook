@@ -33,6 +33,9 @@ public class DefaultInvocationHandler implements InvocationHandler {
     }
 
     public void addHandler(InvocationHandler handler) {
+        if (mHandlers.contains(handler)) {
+            mHandlers.remove(handler);
+        }
         mHandlers.add(0, handler);
     }
 
